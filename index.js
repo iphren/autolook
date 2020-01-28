@@ -27,6 +27,6 @@ server.on('error', (e) => {
   console.error(`server error: ${e.message}`);
 });
 
-server.listen(process.env.NOTE_PORT, 'localhost', () => {
+server.listen(process.env.AUTOLOOK_PORT, 'localhost', () => {
   console.log('server bound');
 });

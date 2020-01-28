@@ -7,8 +7,9 @@ def path(filename):
   return filename
 
 def send(subject,content=str(),attachs=list()):
-  load_dotenv()
-  address = ('localhost',int(os.getenv('NOTE_PORT')))
+  envpath = os.path.join(os.path.dirname(os.path.abspath(os.path.realpath(__file__))),'.env')
+  load_dotenv(dotenv_path=envpath)
+  address = ('localhost',int(os.getenv('AUTOLOOK_PORT')))
   data = {'subject': subject, 'content': content}
   data['attachs'] = [path(f) for f in attachs]
   data = json.dumps(data)
