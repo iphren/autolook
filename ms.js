@@ -140,6 +140,9 @@ async function send(mail) {
     });
     res.on('end', () => {
       console.log(body);
+      if (!!body) {
+        console.log(new Date);
+      };
     });
   });
   req.on('error', (e) => {
